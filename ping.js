@@ -45,10 +45,8 @@ console.log(listUserIP(userIP))
 
 listUserIP(userIP).forEach(function (user) {
     ping.sys.probe(user, function(isAlive){
-        for (var i = 0; i < userIP.length; i++) {
-            userIP[i].status = isAlive;
-            console.log(userIP)
-          }
+        user.status = isAlive;
+        console.log(userIP[0].status)
         })
     })
 
